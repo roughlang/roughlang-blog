@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Input your ID and Password."
+AuthUserFile /home/users/2/pinoko.jp-roughlang/web/208-stg.ugryhacks.com/app/public/.htpasswd
+require valid-user

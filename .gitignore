@@ -1,0 +1,38 @@
+#/vendor/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Laravel 4 specific
+app/bootstrap/compiled.php
+app/storage/
+
+# Laravel 5 & Lumen specific
+app/public/storage
+app/public/hot
+
+# Laravel 5 & Lumen specific with changed public path
+app/public_html/storage
+app/public_html/hot
+
+app/storage/*.key
+app/.env
+app/Homestead.yaml
+app/Homestead.json
+app/.vagrant
+app/.phpunit.result.cache
+
+# lwbase
+app/public/ac/wp-config.php
+app/public/ac/wp-content/uploads/*
+app/public/ac/wp-content/plugins/*
+app/public/pma/tmp/*
+logs/*
+app/public/ac/wp-content/debug.log
+
+# mac
+.DS_Store
+.vscode/
+
+# my private
+*_my*
