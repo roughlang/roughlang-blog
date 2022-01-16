@@ -16,13 +16,6 @@ include(__DIR__."/include/common.php");
 					<ul>
 						<li class="parent"><a href="/">Home</a></li>
 						<li class="parent"><a href="<?php echo home_url(); ?>">Blog</a></li>
-						<?php
-						$category = get_the_category();
-						$cat_id   = $category[0]->cat_ID;
-						$cat_name = $category[0]->cat_name;
-						$cat_slug = $category[0]->category_nicename;
-						$cat_link = get_category_link($category[0]->term_id);
-						?>
 						<li class="parent"><a href="<?php echo $cat_link; ?>"><?php echo $cat_name; ?></a></li>
 						<?php
 						$title = get_the_title();

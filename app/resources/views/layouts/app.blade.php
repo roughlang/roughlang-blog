@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="canonical" href="{{ url()->current() }}">
 	@include('include/favicon')
-	<title>@yield('title') | {{ env('APP_NAME') }}</title>
+	<title>@yield('title') | Roughlang</title>
 	<link rel="stylesheet" href="/assets/css/_main.css" media="screen">
 	<script type="text/javascript" src="/assets/bootstrap5/js/bootstrap.min.js"></script>
 	@if(env('APP_ENV') == 'local' || env('APP_ENV') == 'develop')

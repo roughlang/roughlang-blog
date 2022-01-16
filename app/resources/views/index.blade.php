@@ -15,7 +15,8 @@
 <div class="container lw-contents-block mb60">
   <div class="row">
     <div class="col-sm-6">
-      <h2>Document</h2>
+      <h2>Document hoge</h2>
+      {{ env('APP_NAME') }}
       <ul>
         <li><a href="https://github.com/roughlang/lwbase" target="_blank">https://github.com/roughlang/lwbase</a></li>
         <li><a href="http://localhost:8000/ac/?feed=rss2" target="_blank">http://localhost:8000/ac/?feed=rss2</a></li>
