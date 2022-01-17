@@ -12,7 +12,7 @@ echo basename(get_page_template());
 	<div class="container lw-contents-block blog-contents-block mt60 mb60">
 		<div class="row">
 			<div class="col-md-9 blog">
-				<h2 class="mb60">Blog document</h2>
+				<h2 class="mb60">Blog document11</h2>
 				<div class="breadcrumb">
 					<ul>
 						<li class="parent"><a href="/">Home</a></li>

@@ -7,6 +7,7 @@
 	"orientation":		"any",
 	"background_color":	"#fff",
 	"theme_color":		"#fff",
+	"orientation":		"any",
 	"icons": [
 		{
 			"src": "/android-chrome-36x36.png",
