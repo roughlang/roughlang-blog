@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
-@section('title', 'lwbase top page')
+@section('title', 'Roughlang')
 
 @section('top_banner')
-<div class="big-banner p-3 p-sm-5 mb-4 bg-img">
-	<div class="container">
-		<h1 class="display-4">laravel8 + wordpress</h1>
-		<p class="lead">Wordpress in Laravel8  and common assets for both.</p>
+<div id="big-banner" class="big-banner p-3 p-sm-5 mb-4 bg-img">
+	<div id="container" class="container">
+		<h1 class="display-4">{{ env('APP_NAME') }}</h1>
+		<p class="lead">Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheuren Ungeziefer verwandelt. Er lag auf sinem panzerartig harten Rücken und sah, wenn er den Kopf eine wenig hob, seinen gewölbten, braunen, von bogenförmigen Versteifungen geteilten Bauch, auf dessen Höhe sich die Bettdecke, zum gänzlichen Niedergleiten bereit, kaum noch erhalten konnte. Seine vielen, im Vergleich zu seinem sonstigen Umfang kläglich dünnnen Beine flimmerten ihm hilflos vor den Augen.</p>
 	</div>
 </div>
 @endsection

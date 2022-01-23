@@ -16,7 +16,22 @@
 	<script type="text/javascript" src="/assets/js/vue/vue.min.js"></script>
 	<script type="text/javascript" src="/assets/js/vue/axios.min.js"></script>
 	@endif
-	
+	@if(env('APP_ENV') == 'local' || env('APP_ENV') == 'develop')
+	<script type="text/javascript" src="/assets/js/jquery/jquery-3.6.0.js"></script>
+	<script type="text/javascript" src="/assets/js/_main/main.js"></script>
+	@else
+	<script type="text/javascript" src="/assets/js/jquery/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="/assets/js/_main/main-dist.js"></script>
+	@endif
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-3N6SQZE3KH"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-3N6SQZE3KH');
+	</script>	
 </head>
 <body>
 <div class="topbar"></div>
