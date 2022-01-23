@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'lwbase top page')
+@section('title', 'Roughlang')
 
 @section('top_banner')
 <div id="big-banner" class="big-banner p-3 p-sm-5 mb-4 bg-img">
