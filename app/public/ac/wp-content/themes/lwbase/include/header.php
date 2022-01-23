@@ -56,4 +56,13 @@ require_once(__DIR__."/common.php");
 	<script type="text/javascript" src="/assets/bootstrap5/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/assets/js/vue/vue.js"></script>
 	<script type="text/javascript" src="/assets/js/vue/axios.js"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-3N6SQZE3KH"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-3N6SQZE3KH');
+	</script>
 </head>
