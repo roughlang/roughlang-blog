@@ -23,7 +23,6 @@ $(function(){
     }
   }
 
-
   // $("#big-banner").addClass("big-banner-before");
   $(window).on('scroll', function(){
     var scrollTop = $(window).scrollTop();
