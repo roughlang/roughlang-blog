@@ -1,5 +1,6 @@
 // alert("main.js");
 $(function(){
+<<<<<<< HEAD
   var window_width = $(window).width();
   var now = new Date();
   var hour = now.getHours();
@@ -24,6 +25,8 @@ $(function(){
   }
 
 
+=======
+>>>>>>> 19d2d11ff8e0e6fbf31a4ab51743f958af418481
   // $("#big-banner").addClass("big-banner-before");
   $(window).on('scroll', function(){
     var scrollTop = $(window).scrollTop();
