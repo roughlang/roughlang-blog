@@ -12,10 +12,13 @@
 @endsection
 
 @section('content_block')
-<div class="container lw-contents-block mb60">
+<div class="container lw-contents-block mt100 mb100">
   <div class="row">
     <div class="col-sm-6">
-      <h2>Document hoge</h2>
+      <h2>Blog</h2>
+
+      <script type="text/javascript" src="/assets/js/vue/vue.js"></script>
+      https://idee.roughlang.com/ac/wp-json/wp/v2/posts
       {{ env('APP_NAME') }}
       <ul>
         <li><a href="https://github.com/roughlang/lwbase" target="_blank">https://github.com/roughlang/lwbase</a></li>
@@ -26,7 +29,7 @@
     <div class="col-sm-6">
       <h1>Hello!!</h1>
       <div id="app">@{{ message }}</div>
-      <script type="text/javascript" src="/assets/js/vue/vue.js"></script>
+      
       <script>
         var app = new Vue({
           el: '#app',
@@ -79,3 +82,5 @@
   </div>
 </div>
 @endsection
+
+
