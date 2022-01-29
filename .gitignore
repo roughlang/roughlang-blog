@@ -35,4 +35,5 @@ app/public/ac/wp-content/debug.log
 .vscode/
 
 # my private
-*_my*
+*_my_app
+_app

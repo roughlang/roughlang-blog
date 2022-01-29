@@ -120,8 +120,8 @@ mysql -u root lwbase_app < /tmp/lwbase_app.sql
 
 - Classic Editor
 - Classic Widgets
-```
-```
+- Akismet Spam Protection (Akismet スパム保護)
+- WP Githuber MD – WordPress Markdown Editor
 
 ## Utility
 
