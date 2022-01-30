@@ -20,6 +20,11 @@ function adjust_content_text($content) {
 $page_url = WP_TOPURL.$_SERVER['REQUEST_URI'];
 
 /**
+ * 
+ */
+$blog_title = "Documents";
+
+/**
  * pege title
  */
 if ($_SERVER['REQUEST_URI'] == "/ac/") {
@@ -53,7 +58,6 @@ else
   } else {
     $page_title = get_the_title();
   }
-  
 }
 
 
