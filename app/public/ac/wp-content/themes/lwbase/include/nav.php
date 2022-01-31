@@ -1,3 +1,4 @@
+<?php require_once(__DIR__."/../include/common.php"); ?>
 <nav class="navbar navbar-expand-lg navbar-light">
 	<div class="container-fluid">
     <img src="/assets/img/icon/favicon/android-chrome-36x36.png" alt="Roughlang" class="logo">
@@ -11,7 +12,7 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle active" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
+          <a class="nav-link dropdown-toggle active" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $blog_title; ?></a>
           <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
             <li><a class="dropdown-item" href="<?php echo WP_HOME; ?>">Top</a></li>
             <li><a class="dropdown-item" href="<?php echo WP_HOME; ?>/category">Category</a></li>

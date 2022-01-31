@@ -12,11 +12,11 @@ echo basename(get_page_template());
 	<div class="container lw-contents-block blog-contents-block mt60 mb60">
 		<div class="row">
 			<div class="col-md-9 blog">
-				<h2 class="mb60">Blog document11</h2>
+				<h2 class="mb60"><?php echo $blog_title; ?></h2>
 				<div class="breadcrumb">
 					<ul>
 						<li class="parent"><a href="/">Home</a></li>
-						<li><a href="<?php echo home_url(); ?>">Blog</a></li>
+						<li><a href="<?php echo home_url(); ?>"><?php echo $blog_title; ?></a></li>
 						<!-- <li class="parent"><a href="#">Category</a></li>
 						<li><a href="#">Blog title</a></li> -->
 					</ul>
@@ -33,19 +33,16 @@ echo basename(get_page_template());
 						$content = mb_substr($content,0,200);
 						echo "<p class='top-content'>";
 						
-						// if (!empty(the_post_thumbnail_url())) {
-						// 	echo "<img src='".the_post_thumbnail_url()."' class='blog-icatch'>";
-						// }
 						$thumbnail = get_the_post_thumbnail_url();
 						if (empty(get_the_post_thumbnail_url())) {
 							// nothing
 						} else {
 							echo "<img src='".$thumbnail."' class='blog-icatch'>";
 						}
+						$content = trim($content,"　");
 						echo $content."..."."</p>";
 						?>
 						<div class="blog-meta mb30">
-							
 							<p class="datetime float-end"><?php the_time('Y.m.d'); ?></p>
 							<?php the_category(); ?>
 						</div>

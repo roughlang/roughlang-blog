@@ -34,25 +34,38 @@ if (mb_strlen($page_title) > 10) {
 						<div class="tags float-end">
 							<?php the_tags('<ul><li>', '</li><li>', '</li></ul>'); ?>
 						</div><br clear="both">
+            <div class="wp-content">
+              <?php the_content(); ?>
+            </div>
+            <br clear="both">
+            <div class="thumbnail-list mt50" id="thmnl">
 						<?php
-						$content = get_the_content();
-						// $content = adjust_content_text($content);
-						// $content = mb_substr($content,0,200);
-						echo "<p class='top-content'>";
-            echo $content;
-						
-						// if (!empty(the_post_thumbnail_url())) {
-						// 	echo "<img src='".the_post_thumbnail_url()."' class='blog-icatch'>";
-						// }
-						$thumbnail = get_the_post_thumbnail_url();
-						if (empty(get_the_post_thumbnail_url())) {
-							// nothing
-						} else {
-							echo "<img src='".$thumbnail."' class='blog-icatch'>";
-						}
+              $images = post_images();
+              foreach($images as $image){
+                echo <<<EOM
+                  <a data-bs-toggle="modal" data-bs-target="#modalid_ugryhacks" class="modal-link">
+                    <img src="{$image}" width="100%" alt="xxxxxxx" class="modal-image mb-10">
+                  </a>
+                  <div class="modal fade" id="modalid_ugryhacks" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <img src="{$image}" width="100%" alt="xxxxxxx">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+EOM;
+              }
 						?>
+            </div>
 						<div class="blog-meta mb30">
-							<p class="datetime float-end"><?php the_time('Y.m.d'); ?></p>
+							<p class="datetime float-end">
+                <?php the_time('Y.m.d'); ?>
+              </p>
 							<?php the_category(); ?>
 						</div>
 					<?php endwhile; ?>
