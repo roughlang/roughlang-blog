@@ -6,7 +6,11 @@ include(__DIR__."/include/common.php");
  * breadcrumb string
  */
 if (mb_strlen($page_title) > 10) {
-  $breadcrumb_blog_title = mb_substr($page_title, 0, 10)."...";
+  list($title,$tail) = explode("|",$page_title);
+  $breadcrumb_blog_title = mb_substr($title, 0, 10)."...";
+} else {
+  list($title,$tail) = explode("|",$page_title);
+  $breadcrumb_blog_title = trim($title);
 }
 ?>
 <!DOCTYPE html>
@@ -34,11 +38,11 @@ if (mb_strlen($page_title) > 10) {
 						<div class="tags float-end">
 							<?php the_tags('<ul><li>', '</li><li>', '</li></ul>'); ?>
 						</div><br clear="both">
-            <div class="wp-content">
+            <div class="single-content">
               <?php the_content(); ?>
             </div>
             <br clear="both">
-            <div class="thumbnail-list mt50" id="thmnl">
+            <div class="thumbnail-list mt50 mb50" id="thmnl">
 						<?php
               $images = post_images();
               foreach($images as $image){
