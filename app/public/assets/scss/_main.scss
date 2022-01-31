@@ -318,37 +318,28 @@ body {
 		}
 		/* api+vue */
 		.blog {
-      // background-color: #ff0;
 			.breadcrumb {
 				ul {
 					margin-left: -12px;
-          background-color: #ff0;
 					li {
 						font-size: 13px;
 						display: inline-block;
 						margin-right: 18px;
-						a:link, a:visited {
-						}
-						a:active, a:hover {
-						}
 					}
 					li.parent:after {
 						content: " >";
 					}
 				}
 			}
-
 			h4 {
 				line-height: 35px;
 			}
 			li {
-				// background: #f0f;
 				font-size: 1rem;
 				list-style: none;
 				margin-left: -20px;
 			}
 			.tags {
-				// background: #ff0;
 				margin-bottom: -15px !important;
 				ul {
 					li {
@@ -377,8 +368,7 @@ body {
 					border: 1px solid #888;
 				}
 			}
-			.wp-content {
-        // background-color: #ff0;
+			.single-content {
 				line-height: 26px;
 				h1,h2,h3 {
 					font-size: 24px;
@@ -397,6 +387,33 @@ body {
 					font-size: 18px;
 					color: #444;
 				}
+        img {
+          margin-top: 20px;
+          @media (max-width: 575px) {
+            width: 100%;
+            margin-bottom: 15px;
+          }
+          @media (min-width: 576px) and (max-width: 768px) {
+            width: 100%;
+            margin-bottom: 15px;
+          }
+          @media (min-width: 769px) and (max-width: 992px) {
+            width: 100%;
+            margin-bottom: 15px;
+          }
+          @media (min-width: 993px) and (max-width: 1200px) {
+            width: 50%;
+            float:left;
+            margin-right: 20px;
+            margin-bottom: 5px;
+          }
+          @media (min-width: 1201px) {
+            width: 50%;
+            float:left;
+            margin-right: 20px;
+            margin-bottom: 5px;
+          }
+        }
         p {
           img {
             margin-top: 20px;
@@ -426,8 +443,6 @@ body {
             }
           }
         }
-
-
 				blockquote {
 					border-left: 3px solid #c1c1c1;
 					padding: 6px 0px 0px 13px;
@@ -454,7 +469,6 @@ body {
 			}
 
       .thumbnail-list {
-        background: #ff0;
         a {
           img.modal-image {
             width: 80px;
@@ -462,9 +476,7 @@ body {
         }
       }
 			.thubnail {
-				// background: #ff0;
 				.post-image {
-					// background: #ff0;
 					img.post-image-img {
 						width: 80px;
 						height: 80px;
@@ -494,9 +506,7 @@ body {
         }
       }
 			.blog-meta {
-				// background: #ff0;
 				ul.post-categories {
-					// background: #ff0;
 					margin-left: -14px;
 					margin-top: -14px;
 					li {
@@ -518,7 +528,6 @@ body {
 			/* Sidebar */
 			.menu {
 				li {
-					// background: #ff0;
 					list-style: none;
 					h3 {
 						font-size: 18px;
@@ -545,7 +554,6 @@ body {
 						li {
 							display: inline-block;
 							margin-right: 13px;
-							// background: #c1c1c1;
 							border-left: 1px solid #808080;
 							border-top: 1px solid #808080;
 							border-bottom: 1px solid #808080;
