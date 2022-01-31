@@ -34,25 +34,21 @@ if (mb_strlen($page_title) > 10) {
 						<div class="tags float-end">
 							<?php the_tags('<ul><li>', '</li><li>', '</li></ul>'); ?>
 						</div><br clear="both">
+            <div class="content">
+              <?php the_content(); ?>
+            </div>
+            <div class="thumbnail-list">
 						<?php
-						$content = get_the_content();
-						// $content = adjust_content_text($content);
-						// $content = mb_substr($content,0,200);
-						echo "<p class='top-content'>";
-            echo $content;
-						
-						// if (!empty(the_post_thumbnail_url())) {
-						// 	echo "<img src='".the_post_thumbnail_url()."' class='blog-icatch'>";
-						// }
-						$thumbnail = get_the_post_thumbnail_url();
-						if (empty(get_the_post_thumbnail_url())) {
-							// nothing
-						} else {
-							echo "<img src='".$thumbnail."' class='blog-icatch'>";
-						}
+              $images = post_images();
+              foreach($images as $image){
+                echo $image;
+              }
 						?>
+            </div>
 						<div class="blog-meta mb30">
-							<p class="datetime float-end"><?php the_time('Y.m.d'); ?></p>
+							<p class="datetime float-end">
+                <?php the_time('Y.m.d'); ?>
+              </p>
 							<?php the_category(); ?>
 						</div>
 					<?php endwhile; ?>
