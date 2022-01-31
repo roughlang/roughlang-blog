@@ -318,18 +318,18 @@ body {
 		}
 		/* api+vue */
 		.blog {
+      // background-color: #ff0;
 			.breadcrumb {
 				ul {
 					margin-left: -12px;
+          background-color: #ff0;
 					li {
 						font-size: 13px;
 						display: inline-block;
 						margin-right: 18px;
 						a:link, a:visited {
-
 						}
 						a:active, a:hover {
-
 						}
 					}
 					li.parent:after {
@@ -337,6 +337,7 @@ body {
 					}
 				}
 			}
+
 			h4 {
 				line-height: 35px;
 			}
@@ -376,7 +377,7 @@ body {
 					border: 1px solid #888;
 				}
 			}
-			.content {
+			.wp-content {
         // background-color: #ff0;
 				line-height: 26px;
 				h1,h2,h3 {
@@ -426,6 +427,7 @@ body {
           }
         }
 
+
 				blockquote {
 					border-left: 3px solid #c1c1c1;
 					padding: 6px 0px 0px 13px;
@@ -450,6 +452,15 @@ body {
 					}
 				}
 			}
+
+      .thumbnail-list {
+        background: #ff0;
+        a {
+          img.modal-image {
+            width: 80px;
+          }
+        }
+      }
 			.thubnail {
 				// background: #ff0;
 				.post-image {

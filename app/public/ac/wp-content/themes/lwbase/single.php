@@ -34,14 +34,31 @@ if (mb_strlen($page_title) > 10) {
 						<div class="tags float-end">
 							<?php the_tags('<ul><li>', '</li><li>', '</li></ul>'); ?>
 						</div><br clear="both">
-            <div class="content">
+            <div class="wp-content">
               <?php the_content(); ?>
             </div>
-            <div class="thumbnail-list">
+            <br clear="both">
+            <div class="thumbnail-list mt50" id="thmnl">
 						<?php
               $images = post_images();
               foreach($images as $image){
-                echo $image;
+                echo <<<EOM
+                  <a data-bs-toggle="modal" data-bs-target="#modalid_ugryhacks" class="modal-link">
+                    <img src="{$image}" width="100%" alt="xxxxxxx" class="modal-image mb-10">
+                  </a>
+                  <div class="modal fade" id="modalid_ugryhacks" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <img src="{$image}" width="100%" alt="xxxxxxx">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+EOM;
               }
 						?>
             </div>
