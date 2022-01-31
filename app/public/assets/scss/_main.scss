@@ -376,7 +376,8 @@ body {
 					border: 1px solid #888;
 				}
 			}
-			.contents {
+			.content {
+        // background-color: #ff0;
 				line-height: 26px;
 				h1,h2,h3 {
 					font-size: 24px;
@@ -395,33 +396,36 @@ body {
 					font-size: 18px;
 					color: #444;
 				}
-				img {
-					margin-top: 20px;
-					@media (max-width: 575px) {
-						width: 100%;
-						margin-bottom: 15px;
-					}
-					@media (min-width: 576px) and (max-width: 768px) {
-						width: 100%;
-						margin-bottom: 15px;
-					}
-					@media (min-width: 769px) and (max-width: 992px) {
-						width: 100%;
-						margin-bottom: 15px;
-					}
-					@media (min-width: 993px) and (max-width: 1200px) {
-						width: 50%;
-						float:left;
-						margin-right: 20px;
-						margin-bottom: 5px;
-					}
-					@media (min-width: 1201px) {
-						width: 50%;
-						float:left;
-						margin-right: 20px;
-						margin-bottom: 5px;
-					}
-				}
+        p {
+          img {
+            margin-top: 20px;
+            @media (max-width: 575px) {
+              width: 100%;
+              margin-bottom: 15px;
+            }
+            @media (min-width: 576px) and (max-width: 768px) {
+              width: 100%;
+              margin-bottom: 15px;
+            }
+            @media (min-width: 769px) and (max-width: 992px) {
+              width: 100%;
+              margin-bottom: 15px;
+            }
+            @media (min-width: 993px) and (max-width: 1200px) {
+              width: 50%;
+              float:left;
+              margin-right: 20px;
+              margin-bottom: 5px;
+            }
+            @media (min-width: 1201px) {
+              width: 50%;
+              float:left;
+              margin-right: 20px;
+              margin-bottom: 5px;
+            }
+          }
+        }
+
 				blockquote {
 					border-left: 3px solid #c1c1c1;
 					padding: 6px 0px 0px 13px;
@@ -465,6 +469,17 @@ body {
 				text-align: center;
 				font-size: 14px;
 			}
+      .image-list {
+        a.modal-image-list {
+          img.blog-image-thubnail {
+            width: 80px;
+            height: 80px;
+            object-fit:cover;
+            border:1px solid #c1c1c1;
+            border-radius:50%;
+          }
+        }
+      }
 			.blog-meta {
 				// background: #ff0;
 				ul.post-categories {
