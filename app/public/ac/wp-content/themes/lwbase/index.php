@@ -33,16 +33,19 @@ echo basename(get_page_template());
 						$content = mb_substr($content,0,200);
 						echo "<p class='top-content'>";
 						
+						// if (!empty(the_post_thumbnail_url())) {
+						// 	echo "<img src='".the_post_thumbnail_url()."' class='blog-icatch'>";
+						// }
 						$thumbnail = get_the_post_thumbnail_url();
 						if (empty(get_the_post_thumbnail_url())) {
 							// nothing
 						} else {
 							echo "<img src='".$thumbnail."' class='blog-icatch'>";
 						}
-						$content = trim($content,"　");
 						echo $content."..."."</p>";
 						?>
 						<div class="blog-meta mb30">
+							
 							<p class="datetime float-end"><?php the_time('Y.m.d'); ?></p>
 							<?php the_category(); ?>
 						</div>
