@@ -16,7 +16,7 @@
   <div class="row">
     <div class="col-sm-6">
       <h2>Blog</h2>
-
+      <div id="blog"></div>
       <script type="text/javascript" src="/assets/js/vue/vue.js"></script>
       <script type="text/javascript" src="/assets/js/vue/axios.js"></script>
       
@@ -40,9 +40,7 @@
           }
         });
       </script>
-      <div id="blog">
-
-      </div>
+      
       https://idee.roughlang.com/ac/wp-json/wp/v2/posts
       {{ env('APP_NAME') }}
       <ul>

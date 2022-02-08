@@ -21,6 +21,23 @@ echo basename(get_page_template());
 						<li><a href="#">Blog title</a></li> -->
 					</ul>
 				</div>
+
+        <div class="document-menu mb50">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4 document-menu-1 menu-block">
+                <a href="/ac/menu_of_philosophy"><img src="/assets/img/item/menu-philosophy.jpg"></a>
+              </div>
+              <div class="col-sm-4 document-menu-2 menu-block">
+                <a href="#"><img src="https://placehold.jp/300x300.png"></a>
+              </div>
+              <div class="col-sm-4 document-menu-3 menu-block">
+                <a href="#"><img src="https://placehold.jp/300x300.png"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
 				<?php if(have_posts()): ?>
 					<?php while(have_posts()): the_post(); ?>
 						<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
