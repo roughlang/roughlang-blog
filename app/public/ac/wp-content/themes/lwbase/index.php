@@ -29,7 +29,7 @@ include(__DIR__."/include/common.php");
                 <a href="/ac/menu_of_philosophy"><img src="/assets/img/item/menu-philosophy.jpg"></a>
               </div>
               <div class="col-sm-4 document-menu-2 menu-block">
-                <a href="#"><img src="https://placehold.jp/300x300.png"></a>
+              <a href="/ac/menu_of_archives"><img src="/assets/img/item/menu-archives.jpg"></a>
               </div>
               <div class="col-sm-4 document-menu-3 menu-block">
                 <a href="#"><img src="https://placehold.jp/300x300.png"></a>
