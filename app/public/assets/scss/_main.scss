@@ -488,6 +488,14 @@ body {
 						margin: 0px 4px;
 					}
 				}
+        ul {
+          //
+        }
+        ol {
+          li {
+            list-style-type: decimal;
+          }
+        }
 			}
 
       .thumbnail-list {

@@ -1,6 +1,6 @@
 <?php
 include(__DIR__."/include/common.php");
-echo basename(get_page_template());
+// echo basename(get_page_template());
 ?>
 <!DOCTYPE html>
 <html lang="ja">
