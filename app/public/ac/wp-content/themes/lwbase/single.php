@@ -45,24 +45,26 @@ if (mb_strlen($page_title) > 10) {
             <div class="thumbnail-list mt50 mb50" id="thmnl">
 						<?php
               $images = post_images();
-              foreach($images as $image){
-                echo <<<EOM
-                  <a data-bs-toggle="modal" data-bs-target="#modalid_ugryhacks" class="modal-link">
-                    <img src="{$image}" width="100%" alt="xxxxxxx" class="modal-image mb-10">
-                  </a>
-                  <div class="modal fade" id="modalid_ugryhacks" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-xl">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                          <img src="{$image}" width="100%" alt="xxxxxxx">
-                        </div>
-                      </div>
-                    </div>
+			  $i=0;
+        foreach($images as $image){
+          echo <<<EOM
+            <a data-bs-toggle="modal" data-bs-target="#modalid_{$i}" class="modal-link">
+              <img src="{$image}" width="100%" alt="xxxxxxx" class="modal-image mb-10">
+            </a>
+            <div class="modal fade" id="modalid_{$i}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
+                  <div class="modal-body">
+                    <img src="{$image}" width="100%" alt="xxxxxxx">
+                  </div>
+                </div>
+              </div>
+            </div>
 EOM;
+				$i++;
               }
 						?>
             </div>
@@ -77,16 +79,8 @@ EOM;
 					<!-- 投稿データが取得できない場合の処理 -->
 				<?php endif; ?>
 
-				<?php
-				the_posts_pagination(
-					array(
-						'mid_size'      => 2, // 現在ページの左右に表示するページ番号の数
-						'prev_next'     => true, // 「前へ」「次へ」のリンクを表示する場合はtrue
-						'prev_text'     => __( '&lt;'), // 「前へ」リンクのテキスト
-						'next_text'     => __( '&gt;'), // 「次へ」リンクのテキスト
-						'type'          => 'list', // 戻り値の指定 (plain/list)
-					)
-				); ?>
+        <?php previous_post_link('%link', '前の記事へ', true); ?>
+<?php next_post_link('%link', '次の記事へ', true); ?>
 			</div>
 
 			<div class="col-md-3 blog">
