@@ -3,8 +3,9 @@ $(function(){
   var window_width = $(window).width();
   var now = new Date();
   var hour = now.getHours();
-  console.log(window_width);
-  console.log(hour);
+  // console.log(window_width);
+  // console.log(hour);
+  // 
   /**
    * 
    */

@@ -15,24 +15,57 @@
 <div class="container lw-contents-block mt100 mb100">
   <div class="row">
     <div class="col-sm-6">
-      <h2>Blog</h2>
-      <div id="blog"></div>
-      <script type="text/javascript" src="/assets/js/vue/vue.js"></script>
-      <script type="text/javascript" src="/assets/js/vue/axios.js"></script>
-      
+
+      <h2>Blog update</h2>
+      <div id="blog" class="blog-top mt20">
+        <div v-for="(row,index) in blog" v-bind:key="row.id" class="blog-ul">
+          <div class="blog-li">
+            <a v-bind:href="row.link">@{{row.title.rendered}}</a>
+            <span class="blog-date">@{{row.modified_gmt}}</span><!--(@{{index}})-->
+          </div>
+        </div>
+      </div>
+
+      <h2 class="mt20">Blog index</h2>
+      <div id="blog" class="blog-top mt20">
+        <div class="blog-ul">
+          <div class="blog-li">hoge</div>
+        </div>
+      </div>
+
+
       <script>
         /* Blogの表示 */
         const blog = new Vue({
           el: '#blog',
           data: {
+            loading: false,
             blog: []
           },
           mounted: function() {
             const self = this;
             /* posts */
-            axios.get( 'https://lwbase.roughlang.com/ac/wp-json/wp/v2/posts?page=1')
+            this.loading = true;
+            axios.get( 'https://idee.roughlang.com/ac/wp-json/wp/v2/posts?page=1')
             .then(function(response) {
               // console.log(response.data);
+              for( key in response.data ) {
+                // console.log(key);
+                // console.log(response.data[key].modified_gmt);
+                /* 日付のフォーマット変更 */
+                // console.log(response.data[key].modified_gmt);
+                var date = response.data[key].modified_gmt.split('T');
+
+                var date_format = date[0].replace('-', '.');
+                var date_format = date[0].replace(/-/g, '.');
+                console.log(date_format);
+                response.data[key].modified_gmt = date_format;
+                // console.log(response.data[key].modified_gmt);
+              }
+              this.loading = false;
+
+              /*  */
+
               self.blog = response.data;
             }).catch(function(){
               console.log('Failed to get blog from wp-rest-api.', error);
@@ -40,15 +73,17 @@
           }
         });
       </script>
+
       
-      https://idee.roughlang.com/ac/wp-json/wp/v2/posts
+      <!-- https://idee.roughlang.com/ac/wp-json/wp/v2/posts
       {{ env('APP_NAME') }}
       <ul>
         <li><a href="https://github.com/roughlang/lwbase" target="_blank">https://github.com/roughlang/lwbase</a></li>
         <li><a href="http://localhost:8000/ac/?feed=rss2" target="_blank">http://localhost:8000/ac/?feed=rss2</a></li>
         <li><a href="https://lwbase.roughlang.com/ac/wp-json/wp/v2/posts" target="_blank">https://lwbase.roughlang.com/ac/wp-json/wp/v2/posts</a></li>
-      </ul>  
+      </ul>   -->
     </div>
+
     <div class="col-sm-6">
       <h1>Hello!!</h1>
       <div id="app">@{{ message }}</div>
@@ -64,7 +99,7 @@
 
       <div id="list">
         <ul v-for="(row,index) in tests" :key="row.title">
-            <li>@{{row.title}}(@{{index}})- @{{row.content}}</li>
+            <li>@{{row.title}}(@{{index}})- @{{row.content}}　@{{row.content}}</li>
             <ul v-for="(image,index) in row.images">
               <li>@{{image}}</li>
             </ul>

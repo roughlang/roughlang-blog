@@ -41,7 +41,8 @@ a:link, a:visited {
 a:hover, a:active {
 	color: #4682b4;
 	font-weight: 200;
-	text-decoration: underline;
+	text-decoration: none;
+	opacity: 0.7;
 }
 
 @keyframes fade{
@@ -65,7 +66,19 @@ body {
 		touch-callout:none;
 		user-select:none;
 	}
+  .blog-top {
+    // background: #ff0;
+    .blog-ul {
+      margin-left: 10px;
+      .blog-li {
+		.blog-date {
+			font-size: 10px;
+			color: #888;
+		}
 
+      }
+    }
+  }
 	.topbar {
 		height: 5px;
 		width: 100%;
