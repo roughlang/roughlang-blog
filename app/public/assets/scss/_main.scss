@@ -52,8 +52,8 @@ a:hover, a:active {
 body {
 	/* 読み込み時のfade */
 	animation-name: fade;
-  animation-duration: 1s;
-  animation-iteration-count: 1;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
 	@include set-sans-serif();
 
 	/* 右クリック制御 */
@@ -66,19 +66,33 @@ body {
 		touch-callout:none;
 		user-select:none;
 	}
-  .blog-top {
-    // background: #ff0;
-    .blog-ul {
-      margin-left: 10px;
-      .blog-li {
-		.blog-date {
-			font-size: 10px;
-			color: #888;
+	.blog-top {
+		// position: relative;
+		.blog-ul {
+			margin-left: 10px;
+			.blog-li {
+				.blog-date {
+					font-size: 10px;
+					color: #888;
+				}
+			}
 		}
-
-      }
-    }
-  }
+		.imgwrap {
+			@media (max-width: 575px) {width:83%;}
+			@media (min-width: 576px) {width: 100%;}
+			display: block;
+			margin: 0 auto;
+			img {
+				margin: 0 auto;
+				padding: 0;
+				float: left;
+				display: block;
+				width: 100px;
+				height: 100px;
+				object-fit: cover;
+			}
+		}
+	}
 	.topbar {
 		height: 5px;
 		width: 100%;
