@@ -518,9 +518,13 @@ body {
 					}
 				}
         ul {
-          //
+					margin-left: 16px;
+          li {
+						list-style-type: circle;
+					}
         }
         ol {
+					margin-left: 23px;
           li {
             list-style-type: decimal;
           }
