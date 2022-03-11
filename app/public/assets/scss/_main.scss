@@ -131,7 +131,7 @@ body {
 	}
 	.big-banner {
 		background-size: cover;
-		// relate: big-banner:before
+		background-color: #444;
 		@media (max-width: 575px) {
 			background-image: url("/assets/img/top/bg-575.png");
 			height: 575px;
@@ -649,6 +649,19 @@ body {
 			}
 		}
 	}
+  /* gallery */
+  .top-gallery {
+    // background-color: #f00;
+    margin: 0;
+    padding: 0;
+    // http://brutaldesign.github.io/swipebox/
+    .top-gallery-area {
+      img {
+        width: 100px;
+      }
+    }
+
+  }
 }
 
 .hr {

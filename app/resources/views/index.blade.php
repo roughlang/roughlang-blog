@@ -89,7 +89,17 @@
 </div>
 
 
-
+<div class="container top-gallery" id="top-gallery">
+  <div class="row">
+    <div class="col-sm-12">
+        <div class="top-gallery-area">
+          <img src="/assets/s3/photo_0001.jpg" alt="">
+          <img src="/assets/s3/photo_0002.jpg" alt="">
+          <img src="/assets/s3/photo_0003.jpg" alt="">
+        </div>
+    </div>
+  </div>
+</div>
 <!--
     <div class="col-sm-6">
       <h2>Blog update</h2>
