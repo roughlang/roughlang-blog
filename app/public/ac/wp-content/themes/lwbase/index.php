@@ -22,21 +22,29 @@ include(__DIR__."/include/common.php");
 					</ul>
 				</div>
 
-        <div class="document-menu mb50">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-4 document-menu-1 menu-block">
-                <a href="/ac/menu_of_philosophy"><img src="/assets/img/item/menu-philosophy.jpg"></a>
-              </div>
-              <div class="col-sm-4 document-menu-2 menu-block">
-              <a href="/ac/menu_of_archives"><img src="/assets/img/item/menu-archives.jpg"></a>
-              </div>
-              <div class="col-sm-4 document-menu-3 menu-block">
-                <a href="#"><img src="https://placehold.jp/300x300.png"></a>
-              </div>
+
+        <div class="container document-menu mb200">
+          <div class="row">
+            <a href="#"><img src="/assets/img/top/bl_001.jpg" class="blog-img-menu"></a>
+            <a href="#"><img src="/assets/img/top/bl_002.jpg" class="blog-img-menu"></a>
+            <a href="#"><img src="/assets/img/top/bl_003.jpg" class="blog-img-menu"></a>
+              <img src="/assets/img/top/bl_002.jpg" class="blog-img-menu">
+              <img src="/assets/img/top/bl_003.jpg" class="blog-img-menu">
+              <img src="/assets/img/top/bl_004.jpg" class="blog-img-menu">
+
+            <!-- <div class="col-sm-4 document-menu-1 menu-block">
+              <a href="/ac/menu_of_philosophy"><img src="/assets/img/item/menu-philosophy.jpg"></a>
             </div>
+            <div class="col-sm-4 document-menu-2 menu-block">
+              <a href="/ac/menu_of_archives"><img src="/assets/img/item/menu-archives.jpg"></a>
+            </div>
+            <div class="col-sm-4 document-menu-3 menu-block">
+              <a href="#"><img src="https://placehold.jp/300x300.png"></a>
+            </div> -->
+
           </div>
         </div>
+
 
 				<?php if(have_posts()): ?>
 					<?php while(have_posts()): the_post(); ?>

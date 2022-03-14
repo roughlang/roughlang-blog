@@ -37,6 +37,7 @@ a:link, a:visited {
 	color: #4682b4;
 	text-decoration: none;
 	font-weight: 200;
+  // display: contents;
 }
 a:hover, a:active {
 	color: #4682b4;
@@ -360,27 +361,48 @@ body {
 				}
 			}
       .document-menu {
-        // background: #ff0;
-        .menu-block {
-          text-align: center;
-          a {
-            display: block;
-          }
-          a:hover {
-            cursor: pointer;
-            opacity: 0.7;
-          }
-          img {
-            object-fit: cover;
-            @media (max-width: 575px) {width: 250px;height: 250px;}
-            @media (min-width: 576px) and (max-width: 768px) {width: 150px;height: 150px;}
-            @media (min-width: 769px) and (max-width: 992px) {width: 150px;height:150px;}
-            @media (min-width: 993px) and (max-width: 1200px) {width: 150px;height:150px;}
-            @media (min-width: 1201px) {width: 150px;height:150px;}
-            margin-bottom: 50px;
-            border-radius: 5px;
-          }
+        margin: 0;
+        padding: 0;
+        margin-bottom:60px;
+        // display: flex;
+        // justify-content: center;
+        background: #333;
+        flex-wrap: wrap;
+        .blog-img-menu {
+          float:left;
+          margin: 0 auto;
+          padding: 0;
+          width: 33.33333%;
+          object-fit: cover;
+          filter: grayscale(70%);
+          filter: brightness(50%);
+          height:300px;
         }
+
+
+        .blog-img-menu {
+        // float: left;
+        // width: 100px;
+        }
+        // background: #ff0;
+        // .menu-block {
+        //   text-align: center;
+
+        //   a:hover {
+        //     cursor: pointer;
+        //     opacity: 0.7;
+        //   }
+        //   img {
+        //     object-fit: cover;
+        //     @media (max-width: 575px) {width: 250px;height: 250px;}
+        //     @media (min-width: 576px) and (max-width: 768px) {width: 150px;height: 150px;}
+        //     @media (min-width: 769px) and (max-width: 992px) {width: 150px;height:150px;}
+        //     @media (min-width: 993px) and (max-width: 1200px) {width: 150px;height:150px;}
+        //     @media (min-width: 1201px) {width: 150px;height:150px;}
+        //     margin-bottom: 50px;
+        //     border-radius: 5px;
+        //   }
+        // }
       }
 			h4 {
 				line-height: 35px;
