@@ -68,3 +68,13 @@ else
 // echo "page title: ".$page_title."<br>\n";
 // echo "page excerpt: ".$page_excerpt."<br>\n";
 // echo "page tags: ".$page_tags."<br>\n";
+
+/**
+ * Debug code
+ * 
+ *  - get global IP address
+ * The information in .env is obtained by the function in wp-config.php
+ */
+// $lara_env = get_env($envs);
+// var_dump($lara_env["APP_GLOBAL_IP_ADDRESS"]);
+// var_dump($lara_env["APP_ENV"]);

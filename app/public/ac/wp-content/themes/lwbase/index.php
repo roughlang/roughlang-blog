@@ -22,21 +22,30 @@ include(__DIR__."/include/common.php");
 					</ul>
 				</div>
 
-        <div class="document-menu mb50">
-          <div class="container">
-            <div class="row">
-              <div class="col-sm-4 document-menu-1 menu-block">
-                <a href="/ac/menu_of_philosophy"><img src="/assets/img/item/menu-philosophy.jpg"></a>
+
+        <div class="container document-menu mb200">
+          <div class="row">
+            <a href="/ac/menu_of_philosophy/">
+              <div class="menu-index menu-index-1" id="menu-index-1">
+                <span class="text">Philosophy</span>
+                <img src="/assets/img/top/bl_009.jpg" class="menu-index-img menu-index-img-1">
               </div>
-              <div class="col-sm-4 document-menu-2 menu-block">
-              <a href="/ac/menu_of_archives"><img src="/assets/img/item/menu-archives.jpg"></a>
+            </a>
+            <a href="/ac/archives">
+              <div class="menu-index menu-index-2" id="menu-index-2">
+                <span class="text">Archive</span>
+                <img src="/assets/img/top/bl_002.jpg" class="menu-index-img menu-index-img-2">
               </div>
-              <div class="col-sm-4 document-menu-3 menu-block">
-                <a href="#"><img src="https://placehold.jp/300x300.png"></a>
+            </a>
+            <a href="/ac/category/technology-system/">
+              <div class="menu-index menu-index-3" id="menu-index-3">
+                <span class="text">System</span>
+                <img src="/assets/img/top/bl_003.jpg" class="menu-index-img menu-index-img-3">
               </div>
-            </div>
+            </a>
           </div>
         </div>
+
 
 				<?php if(have_posts()): ?>
 					<?php while(have_posts()): the_post(); ?>

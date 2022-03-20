@@ -6,6 +6,7 @@ function twpp_setup_theme() {
   add_theme_support( 'post-thumbnails' );
 }
 add_action( 'after_setup_theme', 'twpp_setup_theme' );
+
 /**
  * 
  */
@@ -29,10 +30,6 @@ function post_images() {
   preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
   return $matches[1];
 }
-
-
-
-
 
 /**
  * Wordpress rest api
@@ -115,8 +112,6 @@ if ( ! function_exists( 'register_rest_tag_name' )) {
   }
 }
 
-
-
 /**
  * Debug log
  */
@@ -131,4 +126,15 @@ if(!function_exists('_log')){
     }
   }
 }
+
+// function wps_highlight_results($text) {
+//   if(is_search()){
+//   $sr = get_query_var('s');
+//   $keys = explode(" ",$sr);
+//   $text = preg_replace('/('.implode('|', $keys) .')/iu', '<span class="search-highlight">'.$sr.'</span>', $text);
+//   }
+//   return $text;
+// }
+// add_filter('the_title', 'wps_highlight_results');
+// add_filter('the_content', 'wps_highlight_results');
 
