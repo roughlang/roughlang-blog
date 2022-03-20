@@ -1,8 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-light">
 	<div class="container-fluid">
-    <img src="/assets/img/icon/favicon/android-chrome-36x36.png" alt="Roughlang" class="logo">
-		<h1 class="navbar-brand-h1"><a class="navbar-brand" href="/">Roughlang</a></h1>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="sitename">
+      <img src="/assets/img/icon/favicon/android-chrome-36x36.png" alt="Roughlang" class="logo">
+      <h1 class="navbar-brand-h1"><a class="navbar-brand" href="/">Roughlang</a></h1>
+		</div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarScroll">

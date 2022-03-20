@@ -47,7 +47,7 @@ include(__DIR__."/include/common.php");
               'category_name' => $category->slug,
             ];
             $posts = get_posts( $post_args );
-            echo "<ul>";
+            echo "<ul class='mb20'>";
             foreach($posts as $post) {
               $permalink = get_the_permalink();
               echo '<li><a href="'.$permalink.'">'.$post->post_title.'</a></li>';
