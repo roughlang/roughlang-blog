@@ -37,6 +37,7 @@
 
       <script>
         /* Blogの表示 */
+        const env = '{{ config('app.env') }}';
         const blog = new Vue({
           el: '#blog',
           data: {
@@ -47,7 +48,15 @@
             const self = this;
             /* posts */
             this.loading = true;
-            axios.get( 'https://idee.roughlang.com/ac/wp-json/wp/v2/posts?page=1')
+            let blog_api_endpoint;
+            const stg_blog_api_endpoint = 'https://idee.roughlang.com/ac/wp-json/wp/v2/posts?categories=11+8+3+1';
+            const prod_blog_api_endpoint = 'https://insomnia.roughlang.com/ac/wp-json/wp/v2/posts?categories=11+8+3+1';
+            if (env == 'local' || env == 'develop' || env == 'stg') {
+              blog_api_endpoint = stg_blog_api_endpoint;
+            } else if (env == 'prod') {
+              blog_api_endpoint = prod_blog_api_endpoint;
+            }
+            axios.get(blog_api_endpoint)
             .then(function(response) {
               for( key in response.data ) {
                 /* 日付のフォーマット変更 */
@@ -55,7 +64,7 @@
 
                 var date_format = date[0].replace('-', '.');
                 var date_format = date[0].replace(/-/g, '.');
-                console.log(date_format);
+                // console.log(date_format);
                 response.data[key].modified_gmt = date_format;
               }
               this.loading = false;

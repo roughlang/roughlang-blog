@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light">
 	<div class="container-fluid">
 		<div class="sitename">
-		<img src="/assets/img/icon/favicon/android-chrome-36x36.png" alt="Roughlang" class="logo">
-		<h1 class="navbar-brand-h1"><a class="navbar-brand" href="{{ env('APP_URL') }}">{{ env('APP_NAME') }}</a></h1>
+			<img src="/assets/img/icon/favicon/android-chrome-36x36.png" alt="Roughlang" class="logo">
+			<h1 class="navbar-brand-h1"><a class="navbar-brand" href="{{ env('APP_URL') }}">{{ env('APP_NAME') }}</a></h1>
 		</div>
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
