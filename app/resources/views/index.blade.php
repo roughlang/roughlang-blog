@@ -47,7 +47,8 @@
             const self = this;
             /* posts */
             this.loading = true;
-            axios.get( 'https://idee.roughlang.com/ac/wp-json/wp/v2/posts?page=1')
+            // axios.get( 'https://idee.roughlang.com/ac/wp-json/wp/v2/posts?page=1')
+            axios.get( 'https://idee.roughlang.com/ac/wp-json/wp/v2/posts?categories=11+8+3+1')
             .then(function(response) {
               for( key in response.data ) {
                 /* 日付のフォーマット変更 */

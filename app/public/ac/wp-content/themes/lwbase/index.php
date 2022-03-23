@@ -68,6 +68,7 @@ include(__DIR__."/include/common.php");
 						} else {
 							echo "<img src='".$thumbnail."' class='blog-icatch'>";
 						}
+            $content = strip_tags($content);
 						echo $content."..."."</p>";
 						?>
 						<div class="blog-meta mb30">

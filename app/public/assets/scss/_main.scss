@@ -32,6 +32,13 @@ xl ≥1200px
 	font-weight: 200;
 	color: #333;
 }
+@mixin monoc {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
 
 a:link, a:visited {
 	color: #4682b4;
@@ -550,6 +557,14 @@ body {
             margin-bottom: 5px;
           }
         }
+        .grid-area {
+          display: block;
+          background: #ff0;
+          height: auto;
+          img {
+            float: both;
+          }
+        }
         p {
           img {
             margin-top: 20px;
@@ -578,6 +593,11 @@ body {
               margin-bottom: 5px;
             }
           }
+          img.mono {
+            @include monoc();
+          }
+
+
           strong {
             background: linear-gradient(transparent 75%, #c1e0ff 75%);
             // color: #555;
