@@ -23,7 +23,9 @@
 	<script type="text/javascript" src="/assets/js/jquery/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="/assets/js/_main/main-dist.js"></script>
 	@endif
-	<!-- Global site tag (gtag.js) - Google Analytics -->
+
+	@if(env('APP_ENV') == 'local' || env('APP_ENV') == 'develop' || env('APP_ENV') == 'stg')
+	<!-- Global site tag (gtag.js) - Google Analytics local/dev/stg-->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-3N6SQZE3KH"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
@@ -31,7 +33,18 @@
 		gtag('js', new Date());
 
 		gtag('config', 'G-3N6SQZE3KH');
-	</script>	
+	</script>
+	@else
+	<!-- Global site tag (gtag.js) - Google Analytics prod -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-8F44XSQYV9"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-8F44XSQYV9');
+	</script>
+	@endif
 </head>
 <body>
 <div class="topbar"></div>

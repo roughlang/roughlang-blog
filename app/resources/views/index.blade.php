@@ -16,7 +16,7 @@
   <div class="row mb100">
     <div class="col-sm-6">
 
-      <h2>Blog update</h2>
+      <h2 class="mb30">Blog update</h2>
       <div id="blog" class="blog-top">
         <div v-for="(row,index) in blog" v-bind:key="row.id" class="blog-ul">
           <div class="blog-li">
@@ -26,8 +26,8 @@
         </div>
       </div>
 
-      <h2 class="mt50">Blog index</h2>
-      <div id="blog" class="blog-top mb40">
+      <h2 class="mt50 mb30">Blog index</h2>
+      <div id="blog" class="c mb40">
         <div class="blog-ul">
           <div class="blog-li">
             <a href="https://idee.roughlang.com/ac/menu_of_philosophy/">哲学の目次</a>
