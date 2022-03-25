@@ -6,6 +6,10 @@ source ./.env
 
 if [ $APP_ENV = 'local' ]; then
   echo 'ENV::'$APP_ENV;
+    find ./ -name "* 2.php" -type f -exec rm -f {} +;
+    find ./ -name "* 3.php" -type f -exec rm -f {} +;
+    find ./ -name "* 4.php" -type f -exec rm -f {} +;
+    find ./ -name "* 5.php" -type f -exec rm -f {} +;
     # composer
     ./vendor/bin/sail php composer.phar update;
     # laravel

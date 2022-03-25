@@ -47,3 +47,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+/**
+ * uploader
+ */
+Route::get('/uploader', [App\Http\Controllers\UploadController::class, 'uploader'])->name('uploader');
+Route::post('/save', [App\Http\Controllers\UploadController::class, 'save'])->name('upload_save');
