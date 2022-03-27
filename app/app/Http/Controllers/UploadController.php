@@ -33,7 +33,9 @@ class UploadController extends Controller
     /**
      * get files
      */
+    // dd($request);
     $file = $request->file('a');
+    // var_dump($file);
     date_default_timezone_set('Asia/Tokyo');
     /* get file name */
     $originalName = $file->getClientOriginalName();

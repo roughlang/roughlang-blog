@@ -22,7 +22,7 @@
         
       
 
-        <div id="uploader">
+        <div id="uploader" class="uploader">
           <div
             class="drop_area"
             @dragenter="dragEnter"
@@ -37,9 +37,9 @@
           <button @click="test()" type="button" class="btn btn-primary mt30">upload</button>
 
           <div>
-            <ul>
+            <!-- <ul>
               <li v-for="file in files">@{{ file.name }} @{{ file.lastModified }}</li>
-            </ul>
+            </ul> -->
             <ul>
               <li v-for="upload_file in upload_files">@{{ upload_file.name }} @{{ upload_file.lastModified }}
               </li>
@@ -79,31 +79,38 @@
               //   console.log('DragOver')
               // },
               dropFile() {
-                /* file set */
+                /* 画像ファイルかどうか検証 */
+
                 this.files = [...event.dataTransfer.files];
-                /* push array */
+                // this.upload_files.push([...event.dataTransfer.files]);
+
                 for (let n = 0; n < this.files.length; ++n) {
+                  // console.log(this.files[n]);
                   this.upload_files.push(this.files[n]);
                 }
-                /* display thumbnail */
-                for (let i = 0; i < this.files.length; ++i) {
-                  const reader = new FileReader()
-                  reader.onload = () => {
-                    this.images.push(reader.result)
-                  }
-                  reader.readAsDataURL(this.files[i])
-                }
-                /* ajax */
-                this.files.forEach(file => {
-                  let form = new FormData()
-                  form.append('file', file)
-                  axios.post('/save', form).then(response => {
-                    console.log(response.data)
-                  }).catch(error => {
-                    console.log(error)
-                  })
-                })
 
+                this.isEnter = false;
+                console.log(this.upload_files);
+
+                /* サムネイル表示 */
+                for (let i = 0; i < this.files.length; ++i) {
+                const reader = new FileReader()
+                reader.onload = () => {
+                  this.images.push(reader.result)
+                }
+                reader.readAsDataURL(this.files[i])
+                // console.log(this.images);
+                }
+
+                // for (const path of this.files_path) {
+                //   const reader = new FileReader()
+                //   // console.log(path);
+                //   reader.onload = () => {
+                //   this.images.push(reader.result)
+                //   }
+                //   reader.readAsDataURL(this.files_path[0])
+                // }
+                // console.log(reader);
 
                 this.isEnter = false;
               }

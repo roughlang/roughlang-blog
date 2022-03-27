@@ -23,9 +23,11 @@ if (mb_strlen($page_title) > 10) {
 	<div class="container lw-contents-block blog-contents-block mt60 mb60">
 		<div class="row">
 			<div class="col-md-9 blog">
+
 				<h2 class="mb60"><?php echo $blog_title; ?></h2>
-				<?php edit_post_link('編集する','<button type="button" class="btn btn-light">','</button>'); ?>
-				<div class="breadcrumb">
+				<?php edit_post_link('編集する','<button type="button" class="btn btn-light mb20">','</button>'); ?>
+				
+        <div class="breadcrumb">
 					<ul>
 						<li class="parent"><a href="/">Home</a></li>
 						<li class="parent"><a href="<?php echo home_url(); ?>"><?php echo $blog_title; ?></a></li>
@@ -33,9 +35,11 @@ if (mb_strlen($page_title) > 10) {
 						<li><?php echo $breadcrumb_blog_title; ?></li>
 					</ul>
 				</div>
+
 				<?php if(have_posts()): ?>
 					<?php while(have_posts()): the_post(); ?>
-						<h3 class="single-title"><?php the_title(); ?></h3>
+
+						<h3 class="single-title mb50"><?php the_title(); ?></h3>
 						<div class="tags float-end">
 							<?php the_tags('<ul><li>', '</li><li>', '</li></ul>'); ?>
 						</div><br clear="both">
