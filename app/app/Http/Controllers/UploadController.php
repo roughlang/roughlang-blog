@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class UploadController extends Controller
 {
@@ -33,17 +34,23 @@ class UploadController extends Controller
     /**
      * get files
      */
-    // dd($request);
-    $file = $request->file('a');
-    // var_dump($file);
-    date_default_timezone_set('Asia/Tokyo');
-    /* get file name */
+    Log::debug("foobar");
+    Log::debug($request);
+    $file = $request->file('file');
     $originalName = $file->getClientOriginalName();
-    $micro = explode(" ", microtime());
+    Log::debug($originalName);
+    // dd($request);
+    // dd($request);
+    // $file = $request->file('a');
+    // // var_dump($file);
+    // date_default_timezone_set('Asia/Tokyo');
+    // /* get file name */
+    // $originalName = $file->getClientOriginalName();
+    // $micro = explode(" ", microtime());
     $dir = 'public';
     $file->storeAs($dir, $originalName, ['disk' => 'local']);
     
-    return view('uploader/save');
+    return $originalName;
   }
 
 }

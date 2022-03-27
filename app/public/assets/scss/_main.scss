@@ -829,6 +829,9 @@ body {
       .tumbnail-li {
         display: inline-block;
         list-style: none;
+        .delete-mark:hover {
+          cursor: pointer;
+        }
         img {
           width: 100px;
         }

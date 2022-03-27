@@ -34,7 +34,7 @@
               ファイルアップロード
           </div>
 
-          <button @click="test()" type="button" class="btn btn-primary mt30">upload</button>
+          <button v-show="upload_files.length" @click="upload()" type="button" class="btn btn-primary mt30">upload</button>
 
           <div>
             <ul>
@@ -47,7 +47,10 @@
           </div>
           <div>
             <ul class="tumbnail-ul">
-              <li v-for="image in images" class="tumbnail-li"><img v-bind:src="image" class="tumbnail-image"></li>
+              <li v-for="(image,index) in images" class="tumbnail-li">
+                <div class="delete-mark" @click="delete_file(index)">×</div>
+                <img v-bind:src="image" class="tumbnail-image">
+              </li>
             </ul>
           </div>
         </div>
@@ -64,9 +67,18 @@
               images: []
             },
             methods: {
-              test:function(){
+              upload:function(){
                 // alert("hoges");
                 console.log(this.upload_files);
+                this.upload_files.forEach(file => {
+                  let form = new FormData()
+                  form.append('file', file)
+                  axios.post('/save', form).then(response => {
+                    console.log(response.data)
+                  }).catch(error => {
+                    console.log(error)
+                  })
+                })
               },
               dragEnter() {
                 this.isEnter = true;
@@ -94,18 +106,23 @@
                   reader.readAsDataURL(this.files[i])
                 }
                 /* ajax */
-                this.files.forEach(file => {
-                  let form = new FormData()
-                  form.append('file', file)
-                  axios.post('/save', form).then(response => {
-                    console.log(response.data)
-                  }).catch(error => {
-                    console.log(error)
-                  })
-                })
+                // this.upload_files.forEach(file => {
+                //   let form = new FormData()
+                //   form.append('file', file)
+                //   axios.post('/save', form).then(response => {
+                //     console.log(response.data)
+                //   }).catch(error => {
+                //     console.log(error)
+                //   })
+                // })
 
 
                 this.isEnter = false;
+              },
+              delete_file:function(index){
+                console.log(index);
+                this.upload_files.splice(index, 1)
+                this.images.splice(index, 1)
               }
             }
             // console.log(files);
