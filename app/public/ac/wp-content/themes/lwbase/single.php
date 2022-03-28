@@ -93,6 +93,7 @@ EOM;
 			</div>
 
 			<div class="col-md-3 blog">
+				<?php echo do_shortcode( '[bogo]' ); ?>
 				<?php if ( is_active_sidebar('main-sidebar') ) : ?>
 					<ul class="menu">
 						<?php dynamic_sidebar('main-sidebar'); ?>

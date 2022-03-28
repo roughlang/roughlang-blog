@@ -30,7 +30,7 @@
       <div id="blog" class="c mb40">
         <div class="blog-ul">
           <div class="blog-li">
-            <a href="https://idee.roughlang.com/ac/menu_of_philosophy/">哲学の目次</a>
+            <a href="/ac/menu_of_philosophy/">哲学の目次</a>
           </div>
         </div>
       </div>

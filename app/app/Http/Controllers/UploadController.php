@@ -40,9 +40,9 @@ class UploadController extends Controller
     /**
      * get files
      */
-    Log::debug("foobar");
-    Log::debug($request);
-    $file = $request->file('file');
+    // Log::debug("foobar");
+    // Log::debug($request);
+    $file = $request->file('files');
     $originalName = $file->getClientOriginalName();
     Log::debug($originalName);
     // dd($request);

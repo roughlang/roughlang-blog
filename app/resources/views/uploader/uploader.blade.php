@@ -40,7 +40,7 @@
               </li>
             </ul>
             <ul>
-              <li v-for="file in upload_files">@{{ file.name }} @{{ file.lastModified }}</li>
+              <li v-for="file in upload_files">@{{ file.name }}</li>
             </ul>
             <ul>
               <!-- <li v-for="upload_file in upload_files">@{{ upload_file.name }} @{{ upload_file.lastModified }}
@@ -75,27 +75,41 @@
                 this.message = [];
                 this.upload_files.forEach(file => {
                   let form = new FormData()
-                  form.append('file', file)
+                  form.append('files', file)
                   axios.post('/save', form).then(response => {
                     // for (let i = 0; i < response.length; ++i) {
-                    //   consoloe.log(response.data);
+                    //   consoloe.log('http-status:' + response.status);
                     // }
                     // console.log(response.data);
-                    console.log(response.status);
+                    // console.log(response.status);
+                    
+                    for (let i = 0; i < this.upload_files.length; ++i) {
+                      // console.log(this.upload_files[i].name);
+                      if (this.upload_files[i].name == response.data) {
+                        // console.log(this.upload_files[i].name + 'OK!');
+                        this.message.push(this.upload_files[i].name + ' アップロードが完了しました。');
+                      } else {
+                        // console.log(this.upload_files[i].name + 'Failer!');
+                        this.message.push(this.upload_files[i].name + ' アップロードが失敗しました。');
+                      }
+                    }
+
+
                     if (response.status == '200') {
-                      this.message = ['アップロードが完了しました。'];
+                      // this.message = ['アップロードが完了しました。'];
                       this.files = [];
                       this.upload_files = [];
                       this.images = [];
                     }
                     console.log(this.message);
                   }).catch(error => {
-                    this.message = [];
-                    console.log(error.response.status);
-                    console.log(error.response.statusText);
-                    console.log(error);
+                    // this.message = [];
+                    // console.log(error.response.status);
+                    // console.log(error.response.statusText);
+                    // console.log('error:'+error);
                     if (error.response.status == '422') {
-                      this.message = ['送信エラーが発生しました。最初からやり直してください。'];
+                      // this.message = ['送信エラーが発生しました。最初からやり直してください。'];
+                      this.message.push('一部送信エラーが発生しました。');
                     }
                     
                   })
@@ -118,11 +132,15 @@
                 this.files = [...event.dataTransfer.files];
                 /* push array */
                 for (let n = 0; n < this.files.length; ++n) {
-                  // console.log(this.files[n].type);
+                  console.log(this.files[n].type);
+                  console.log(this.files[n].size);
+                  // console.log(this.files[n]);
                   if (
+                    /* image format validation */
                     this.files[n].type == 'image/jpeg' ||
                     this.files[n].type == 'image/png' ||
-                    this.files[n].type == 'image/gif'
+                    this.files[n].type == 'image/gif' ||
+                    this.files[n].size > 500
                   ) {
                     this.upload_files.push(this.files[n]);
                   } else {
