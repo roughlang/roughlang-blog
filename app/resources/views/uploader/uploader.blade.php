@@ -88,6 +88,7 @@
                       if (this.upload_files[i].name == response.data) {
                         // console.log(this.upload_files[i].name + 'OK!');
                         this.message.push(this.upload_files[i].name + ' アップロードが完了しました。');
+                        break;
                       } else {
                         // console.log(this.upload_files[i].name + 'Failer!');
                         this.message.push(this.upload_files[i].name + ' アップロードが失敗しました。');

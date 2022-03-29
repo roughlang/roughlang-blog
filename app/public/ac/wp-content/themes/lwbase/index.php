@@ -49,7 +49,7 @@ include(__DIR__."/include/common.php");
 
 				<?php if(have_posts()): ?>
 					<?php while(have_posts()): the_post(); ?>
-						<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+						<h4 class="blog-top-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 						<div class="tags float-end">
 							<?php the_tags('<ul><li>', '</li><li>', '</li></ul>'); ?>
 						</div><br clear="both">
@@ -71,7 +71,7 @@ include(__DIR__."/include/common.php");
             $content = strip_tags($content);
 						echo $content."..."."</p>";
 						?>
-						<div class="blog-meta mb30">
+						<div class="blog-meta mb50">
 							
 							<p class="datetime float-end"><?php the_time('Y.m.d'); ?></p>
 							<?php the_category(); ?>

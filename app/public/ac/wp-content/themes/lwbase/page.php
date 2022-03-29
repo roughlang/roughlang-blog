@@ -27,6 +27,8 @@ if (mb_strlen($page_title) > 10) {
 		<div class="row">
 			<div class="col-md-9 blog">
 				<h2 class="mb60"><?php echo $blog_title; ?></h2>
+				<?php edit_post_link('編集する','<button type="button" class="btn btn-light mb20">','</button>'); ?>
+				
 				<div class="breadcrumb">
 					<ul>
 						<li class="parent"><a href="/">Home</a></li>

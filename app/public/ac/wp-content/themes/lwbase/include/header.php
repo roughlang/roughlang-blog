@@ -56,6 +56,8 @@ require_once(__DIR__."/common.php");
 	<script type="text/javascript" src="/assets/bootstrap5/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="/assets/js/vue/vue.js"></script>
 	<script type="text/javascript" src="/assets/js/vue/axios.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery/jquery-3.6.0.js"></script>
+	<script type="text/javascript" src="/assets/js/_main/main.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-3N6SQZE3KH"></script>
 	<script>

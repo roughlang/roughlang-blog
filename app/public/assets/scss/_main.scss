@@ -478,13 +478,22 @@ body {
 			h4 {
 				line-height: 35px;
 			}
+      h4.blog-top-title {
+        // background: #ff0;
+        a:link, a:visited {
+          color: #333;
+        }
+        a:hover, a:active {
+          color: #4682b4;
+        }
+      }
 			li {
 				font-size: 1rem;
 				list-style: none;
 				margin-left: -20px;
 			}
 			.tags {
-				margin-bottom: -15px !important;
+				// margin-bottom: -15px !important;
 				ul {
 					li {
 						display: inline-block;
@@ -743,6 +752,80 @@ body {
         }
       }
 			/* Sidebar */
+      .bogo-language-switcher {
+        @media (max-width: 575px) {width: 90%;}
+        @media (min-width: 576px) and (max-width: 768px) {width: 400px;}
+
+        @media (min-width: 769px) and (max-width: 1200px) {
+          li {
+            font-size: 12px;
+            border-top: #888 solid 1px;
+            // border-bottom: #888 solid 1px;
+            border-left: #888 solid 1px;
+            border-right: #888 solid 1px;
+            text-align: center;
+            padding: 4px 0;
+            a:link, a:visited {
+              color: #666;
+            }
+          }
+          li:first-child {
+            border-radius: 5px 5px 0px 0px;
+            a:link, a:visited {
+              color: #666;
+            }
+          }
+          li:last-child {
+            border-radius: 0px 0px 5px 5px;
+            border-bottom: #888 solid 1px;
+            a:link, a:visited {
+              color: #666;
+            }
+          }
+          li.current {
+            background: #888;
+            a:link, a:visited {
+              color: #fff;
+            }
+          }
+        }
+        @media (min-width: 1201px) {
+          li {
+            display: inline-block;
+            width: 33.33333%;
+            font-size: 12px;
+            border-top: #888 solid 1px;
+            border-bottom: #888 solid 1px;
+            border-left: #888 solid 1px;
+            text-align: center;
+            padding: 4px 0;
+            a:link, a:visited {
+              color: #666;
+            }
+          }
+          li:first-child {
+            // border-right: #888 solid 1px;
+            border-radius: 5px 0px 0px 5px;
+            a:link, a:visited {
+              color: #666;
+            }
+          }
+          li:last-child {
+            border-right: #888 solid 1px;
+            border-radius: 0px 5px 5px 0px;
+            a:link, a:visited {
+              color: #666;
+            }
+          }
+          li.current {
+            background: #888;
+            a:link, a:visited {
+              color: #fff;
+            }
+          }
+        }
+
+      }
 			.menu {
 				li {
 					list-style: none;

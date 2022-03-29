@@ -26,7 +26,6 @@ if (mb_strlen($page_title) > 10) {
 
 				<h2 class="mb60"><?php echo $blog_title; ?></h2>
 				<?php edit_post_link('編集する','<button type="button" class="btn btn-light mb20">','</button>'); ?>
-				
         <div class="breadcrumb">
 					<ul>
 						<li class="parent"><a href="/">Home</a></li>
@@ -94,6 +93,7 @@ EOM;
 
 			<div class="col-md-3 blog">
 				<?php echo do_shortcode( '[bogo]' ); ?>
+        <br class="mb50">
 				<?php if ( is_active_sidebar('main-sidebar') ) : ?>
 					<ul class="menu">
 						<?php dynamic_sidebar('main-sidebar'); ?>
