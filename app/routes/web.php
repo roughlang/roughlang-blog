@@ -43,9 +43,17 @@ Route::get('/vue', function () { return view('vue/index'); });
 Route::get('/vue/ajax_get', function () { return view('vue/ajax_get'); });
 Route::get('/vue/component', function () { return view('vue/component'); });
 
+/* login user */
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+/* admin user */
+Route::get('/login/admin', [App\Http\Controllers\Auth\LoginController::class, 'showAdminLoginForm']);
+Route::get('/register/admin', [App\Http\Controllers\Auth\RegisterController::class, 'showAdminRegisterForm']);
+
+Route::post('/login/admin', [App\Http\Controllers\Auth\LoginController::class, 'adminLogin']);
+Route::post('/register/admin', [App\Http\Controllers\Auth\RegisterController::class, 'registerAdmin'])->name('admin-register');
+
+Route::view('/admin', 'admin')->middleware('auth:admin')->name('admin-home');
 
 /**
  * uploader

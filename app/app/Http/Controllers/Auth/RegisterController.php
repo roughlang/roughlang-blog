@@ -86,6 +86,7 @@ class RegisterController extends Controller
 
     public function showAdminRegisterForm()
     {
+        // die("OK");
         return view('auth.register', ['authgroup' => 'admin']);
     }
 

@@ -9,10 +9,13 @@
 	<div class="row">
 		<div class="col-md-12 login">
 			<div class="login-form card mt20">
-				<div class="card-header">{{ __('Login') }}</div>
+				<div class="card-header">{{ isset($authgroup) ? ucwords($authgroup) : ""}} {{ __('Login') }}</div>
 				<div class="card-body">
-
+					@isset($authgroup)
+                    <form method="POST" action="{{ url('login/$authgroup') }}">
+                    @else
 					<form method="POST" action="{{ route('login') }}">
+					@endisset
 						@csrf
 						<label for="email" class="mt10 mb10">{{ __('E-Mail Address') }}</label>
 						<input id="email" type="email" class="mb15 form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
