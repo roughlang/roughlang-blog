@@ -4,9 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use App\Library\CommonSecurity;
+use Illuminate\Support\Facades\Auth;
 
 class UploadController extends Controller
 {
+  private $user;
+
   /**
    * Create a new controller instance.
    *
@@ -15,6 +19,24 @@ class UploadController extends Controller
   public function __construct()
   {
     $this->middleware('auth');
+    
+    /* IP制限 */
+    if (CommonSecurity::PassByIPAddress() === false) {
+      abort( 404 );
+    }
+
+    /* Super users */
+    // if (CommonSecurity::PassBySuperUsers() === false) {
+    //   abort( 404 );
+    // }
+    $this->middleware(function ($request, $next) {
+      $this->user = \Auth::user();
+      if (CommonSecurity::PassBySuperUsers($this->user) === false) {
+        abort( 404 );
+      }
+      return $next($request);
+    });
+    
   }
   /**
    * Show the application dashboard.
@@ -23,6 +45,11 @@ class UploadController extends Controller
    */
   public function uploader()
   {
+    // var_dump(Auth::user()->email);
+    // var_dump(CommonSecurity::get_allow_gip());
+
+    // $c = new CommonSecurity();
+    // echo $c->hello2();
     return view('uploader/uploader');
   }
 

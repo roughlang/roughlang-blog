@@ -10,9 +10,9 @@
 
 		<div class="collapse navbar-collapse" id="navbarScroll">
 				<ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-					<li class="nav-item">
+					<!-- <li class="nav-item">
 						<a class="nav-link active" aria-current="page" href="/">Home</a>
-					</li>
+					</li> -->
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle active" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Blog
@@ -25,7 +25,7 @@
 							<li><a class="dropdown-item" href="/ac/gallery">Gallery</a></li>
 						</ul>
 					</li>
-          <li class="nav-item"><a  class="nav-link active" href="#">foo</a></li>
+          <!-- <li class="nav-item"><a  class="nav-link active" href="#">foo</a></li> -->
           @guest
             @if (Route::has('login'))
               @auth
@@ -48,6 +48,9 @@
               </ul>
             </li>
             <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
               <a  class="nav-link active" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
@@ -58,6 +61,30 @@
                 @csrf
             </form>
           @endguest
+
+          @guest
+            @if (Route::has('login'))
+              @auth
+              これなんだ？
+              @else
+                no login
+              @endauth
+            @endif
+          @else
+            @if(env('APP_ENV') == 'local' || @Request::ip() == '150.249.203.11' && env('APP_ENV') == 'prod')
+            <!-- admin menu -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Admin</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                <li><a class="dropdown-item" href="#">foo</a></li>
+                <li><a class="dropdown-item" href="#">bar</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="/uploader">Uploader</a></li>
+              </ul>
+            </li>
+            @endif
+          @endguest
+
 				</ul>
 				<form class="d-flex">
 					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
