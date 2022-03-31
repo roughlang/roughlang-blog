@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use Illuminate\Http\Request;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,21 +50,21 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-// var_dump($request->ip());
+// var_dump($request->ip());s
 // var_dump($_SERVER['REMOTE_ADDR']);
 // var_dump(Request::ip());
 // die();
 
 
-
-if (
-  env('APP_ENV') == 'local' ||
-  Request::ip() == '150.249.203.12' && env('APP_ENV') == 'prod' ||
-  // 126.235.23.188
-  Request::ip() == '126.235.23.188' && env('APP_ENV') == 'prod'
-) {
+// var_dump( env('APP_ALLOW_GIP'));
+// if (
+//   env('APP_ENV') == 'local' ||
+//   Request::ip() == '150.249.203.12' && env('APP_ENV') == 'prod' ||
+//   // 126.235.23.188
+//   Request::ip() == '126.235.23.188' && env('APP_ENV') == 'prod'
+// ) {
   Route::get('/uploader', [App\Http\Controllers\UploadController::class, 'uploader'])->name('uploader');
   Route::post('/save', [App\Http\Controllers\UploadController::class, 'save'])->name('upload_save');
-}
+// }
 
 
