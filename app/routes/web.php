@@ -57,14 +57,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 // var_dump( env('APP_ALLOW_GIP'));
-if (
-  env('APP_ENV') == 'local' ||
-  Request::ip() == '150.249.203.12' && env('APP_ENV') == 'prod' ||
-  // 126.235.23.188
-  Request::ip() == '126.235.23.188' && env('APP_ENV') == 'prod'
-) {
+// if (
+//   env('APP_ENV') == 'local' ||
+//   Request::ip() == '150.249.203.12' && env('APP_ENV') == 'prod' ||
+//   // 126.235.23.188
+//   Request::ip() == '126.235.23.188' && env('APP_ENV') == 'prod'
+// ) {
   Route::get('/uploader', [App\Http\Controllers\UploadController::class, 'uploader'])->name('uploader');
   Route::post('/save', [App\Http\Controllers\UploadController::class, 'save'])->name('upload_save');
-}
+// }
 
 
