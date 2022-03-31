@@ -58,7 +58,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 if (
   env('APP_ENV') == 'local' ||
-  Request::ip() == '150.249.203.12' && env('APP_ENV') == 'prod'
+  Request::ip() == '150.249.203.12' && env('APP_ENV') == 'prod' ||
+  // 126.235.23.188
+  Request::ip() == '126.235.23.188' && env('APP_ENV') == 'prod'
 ) {
   Route::get('/uploader', [App\Http\Controllers\UploadController::class, 'uploader'])->name('uploader');
   Route::post('/save', [App\Http\Controllers\UploadController::class, 'save'])->name('upload_save');
