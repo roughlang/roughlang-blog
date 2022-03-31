@@ -123,6 +123,16 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+    /**
+     * Allow GIP
+     */
+    'allowgip' => env('APP_ALLOW_GIP', '127.0.0.1'),
+    
+    /**
+     * Super users
+     */
+    'superusers' => env('APP_SUPERUSERS', 'roughlangx@gmail.com'),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -236,6 +246,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         // Debugbar
         'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        // common
+        'CloudinaryUpload' => app\Library\CloudinaryUpload::class,
+        'CommonSecurity' => app\Library\CommonSecurity::class,
     ],
 
 ];
