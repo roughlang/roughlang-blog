@@ -26,9 +26,6 @@ class UploadController extends Controller
     }
 
     /* Super users */
-    // if (CommonSecurity::PassBySuperUsers() === false) {
-    //   abort( 404 );
-    // }
     $this->middleware(function ($request, $next) {
       $this->user = \Auth::user();
       if (CommonSecurity::PassBySuperUsers($this->user) === false) {
@@ -50,6 +47,7 @@ class UploadController extends Controller
 
     // $c = new CommonSecurity();
     // echo $c->hello2();
+    var_dump($this->user->email);
     return view('uploader/uploader');
   }
 

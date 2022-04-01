@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+// use App\Library\CommonSecurity;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,8 +64,18 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //   // 126.235.23.188
 //   Request::ip() == '126.235.23.188' && env('APP_ENV') == 'prod'
 // ) {
-  Route::get('/uploader', [App\Http\Controllers\UploadController::class, 'uploader'])->name('uploader');
-  Route::post('/save', [App\Http\Controllers\UploadController::class, 'save'])->name('upload_save');
+
 // }
+
+
+/**
+ * admin
+ * https://www.milk-island.net/javascript/hashgenerator/sha2_512.html
+ */
+Route::get('/7f112c5bc568/admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('adminroot');
+// Route::get('/acd79785b292/{slug}', [App\Http\Controllers\Admin\AdminController::class, 'uploader'])->name('uploader');
+Route::get('/acd79785b292/uploader', [App\Http\Controllers\Admin\UploadController::class, 'uploader'])->name('uploader');
+Route::post('/save', [App\Http\Controllers\UploadController::class, 'save'])->name('upload_save');
+
 
 
