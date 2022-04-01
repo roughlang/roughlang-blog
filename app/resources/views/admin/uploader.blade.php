@@ -3,23 +3,19 @@
 @section('title', 'Uploader')
 
 @section('content_block')
-<div class="container lw-contents-block mt100">
+<div class="container lw-contents-block admin mt100">
   <div class="row mb100">
     <div class="col-sm-3">
-      foobar  
+      <ul class="admin-menu">
+        <li><a href="{{ route('adminroot') }}">Admin top</a></li>
+        <li><a href="{{ route('uploader') }}">Image uploader</a></li>
+      </ul>
     </div>
     <div class="col-sm-9">
-      <!-- <h3>Basic</h3>
-      <form action="/save" method="post"  enctype="multipart/form-data">
-        @csrf
-        <input type="file" name="a" >
-        <input type="submit" >
-      </form> -->
-
-      <h3>Drag & Drop</h3>
+      <h3 class="mb30">Admin</h3>
+      <h4 class="mb20">Uploader Drag & Drop</h4>
+      <p>Storageに画像アップロードします。</p>
       <div class="co-uploader" id="co-uploader">
-      <!-- https://reffect.co.jp/vue/drag-drop-file-upload -->
-        
         <div id="uploader">
           <div
             class="drop_area"
@@ -30,9 +26,7 @@
             :class="{enter: isEnter}"> 
               ファイルアップロード
           </div>
-
           <button v-show="upload_files.length" @click="upload()" type="button" class="btn btn-primary mt30">upload</button>
-
           <div>
             <ul>
               <li v-for="text in message">
@@ -74,9 +68,13 @@
                 this.images = [];
                 this.message = [];
                 this.upload_files.forEach(file => {
+
                   let form = new FormData()
                   form.append('files', file)
                   axios.post('/save', form).then(response => {
+                    // setTimeout( function() {
+                    //   console.log(this.upload_files[i].name);
+                    // }, 10000 );
                     // for (let i = 0; i < response.length; ++i) {
                     //   consoloe.log('http-status:' + response.status);
                     // }
@@ -84,6 +82,7 @@
                     // console.log(response.status);
                     
                     for (let i = 0; i < this.upload_files.length; ++i) {
+
                       // console.log(this.upload_files[i].name);
                       if (this.upload_files[i].name == response.data) {
                         // console.log(this.upload_files[i].name + 'OK!');
@@ -98,11 +97,11 @@
 
                     if (response.status == '200') {
                       // this.message = ['アップロードが完了しました。'];
-                      // this.files = [];
-                      // this.upload_files = [];
-                      // this.images = [];
+                      this.files = [];
+                      this.upload_files = [];
+                      this.images = [];
                     }
-                    // console.log(this.message);
+                    console.log(this.message);
                   }).catch(error => {
                     // this.message = [];
                     // console.log(error.response.status);
@@ -111,7 +110,8 @@
                     if (error.response.status == '422') {
                       // this.message = ['送信エラーが発生しました。最初からやり直してください。'];
                       this.message.push('一部送信エラーが発生しました。');
-                    }       
+                    }
+                    
                   })
                 })
               },
@@ -130,7 +130,6 @@
                 this.images = [];
                 this.message = [];
                 this.files = [...event.dataTransfer.files];
-                // console.log(this.files[n].type);
                 /* push array */
                 for (let n = 0; n < this.files.length; ++n) {
                   // console.log(this.files[n].type);
@@ -181,7 +180,7 @@
                 this.isEnter = false;
               },
               delete_file:function(index){
-                // console.log(index);
+                console.log(index);
                 this.files.splice(index, 1)
                 this.upload_files.splice(index, 1)
                 this.images.splice(index, 1)
@@ -189,10 +188,8 @@
             }
           }) 
         </script>
-      </div><!-- co-uploader -->
 
-
-      
+      </div>
     </div>
   </div>
 </div>

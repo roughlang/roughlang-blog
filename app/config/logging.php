@@ -48,6 +48,13 @@ return [
     */
 
     'channels' => [
+        'admin_access' => [
+            'driver' => 'single',
+            'path' => storage_path('logs/admin_access.log'),
+            'level' => 'info',
+            // 'permission' => 0666,
+        ],
+
         'stack' => [
             'driver' => 'stack',
             'channels' => ['single'],

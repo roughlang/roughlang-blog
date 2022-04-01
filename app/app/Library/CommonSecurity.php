@@ -17,6 +17,7 @@ class CommonSecurity
 {
   public static $allowgip;
   public static $superusers;
+  private $user;
 
   public function __construct(Request $request)
   {
@@ -27,9 +28,7 @@ class CommonSecurity
    * Super user
    */
   public static function PassBySuperUsers($user) {
-    // var_dump(self::GetSuperUserEmailAddress());
-    // $user = $this->request->user();
-    // var_dump($user->email);
+
     foreach(self::GetSuperUserEmailAddress() as $email) {
       // var_dump($email);
       if ($user->email == $email) {
