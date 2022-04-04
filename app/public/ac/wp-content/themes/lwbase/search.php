@@ -21,6 +21,19 @@ include(__DIR__."/include/common.php");
 					</ul>
 				</div>
 
+				<div class="search_words mb70"><p>
+					<?php
+          if(!empty($words)) {
+            echo '<div class="alert alert-secondary" role="alert">';
+            foreach($words as $s_word){
+              echo "<strong>".($s_word)."</strong>"." ";
+            }
+            echo 'で検索しました。</div>';
+          }
+          ?>
+					
+				</p></div>
+
 				<?php if(have_posts()): ?>
 					<?php while(have_posts()): the_post(); ?>
 						<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>

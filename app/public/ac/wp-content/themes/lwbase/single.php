@@ -1,6 +1,6 @@
 <?php
 include(__DIR__."/include/common.php");
-// echo basename(get_page_template());
+
 
 /**
  * breadcrumb string
@@ -42,14 +42,14 @@ if (mb_strlen($page_title) > 10) {
 						<div class="tags float-end">
 							<?php the_tags('<ul><li>', '</li><li>', '</li></ul>'); ?>
 						</div><br clear="both">
-            <div class="single-content">
-              <?php the_content(); ?>
-            </div>
+						<div class="single-content">
+						  <?php the_content(); ?>
+						</div>
             <br clear="both">
             <div class="thumbnail-list mt50 mb50" id="thmnl">
 						<?php
               $images = post_images();
-			  $i=0;
+			        $i=0;
         foreach($images as $image){
           echo <<<EOM
               <a data-bs-toggle="modal" data-bs-target="#modalid_{$i}" class="modal-link">
