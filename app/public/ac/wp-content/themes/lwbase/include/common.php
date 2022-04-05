@@ -69,16 +69,26 @@ else
 
 /**
  * meta data for OG e.t.c
+ * 
+ * $page_url
+ * $page_title
+ * $page_excerpt
+ * $og_post_image
  */
-/* home top page */
+
+ /* default */
 $twitter_site = "@AonumaMoriri";
 $twitter_creator = "@AonumaMoriri";
+$def_page_excerpt = get_bloginfo("description", "display")." 現代思想,哲学,現代美術,歴史,社会,分析哲学,大陸哲学,論理実証主義,分析哲学,実存主義,構造主義,ポスト構造主義,現象学についてアプローチしています。";
+$def_og_post_image ="https://insomnia.roughlang.com/assets/img/item/og_default_img.png";
 
+/* home top page */
 if ( is_front_page() && is_home() )
 {
-  $page_title = "Roughlang document";
-  $page_excerpt = "";
-  $page_excerpt = get_bloginfo("description", "display")."現代思想,哲学,現代美術,歴史,社会,分析哲学,大陸哲学,論理実証主義,分析哲学,実存主義,構造主義,ポスト構造主義,現象学についてアプローチしています。";
+  $page_title = "Insomnia document | Roughlang";
+  $page_excerpt = "Insomniaのブログです。";
+  $page_excerpt = get_bloginfo("description", "display")." 現代思想,哲学,現代美術,歴史,社会,分析哲学,大陸哲学,論理実証主義,分析哲学,実存主義,構造主義,ポスト構造主義,現象学についてアプローチしています。";
+  $og_post_image = $def_og_post_image;
 }
 /* single or page */
 elseif ( is_single() || is_page() ) {
@@ -107,7 +117,7 @@ elseif ( is_single() || is_page() ) {
   /* icatch or first image */
   $og_post_images = post_images();
   if (empty($og_post_images)) {
-    $og_post_image ="https://insomnia.roughlang.com/assets/img/item/og_default_img.png";
+    $og_post_image = $def_og_post_image;
   } else {
     $og_post_image = $og_post_images[0];
   }
@@ -127,6 +137,11 @@ elseif (is_search())
   $words = explode(" ",$search_words);
 } else {
   /* archive template */
+  $page_title = "Insomnia document | Roughlang";
+  $page_excerpt = $def_page_excerpt;
+  $twitter_site = "@AonumaMoriri";
+  $twitter_creator = "@AonumaMoriri";
+  $og_post_image = $def_og_post_image;
   // echo "else";
 }
 

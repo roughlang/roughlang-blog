@@ -157,6 +157,12 @@ body {
 	.big-banner {
 		background-size: cover;
 		background-color: #444;
+    // .big-menu {
+    //   .big-menu-list {
+    //     //
+    //     background: #ff0;
+    //   }
+    // }
 		@media (max-width: 575px) {
 			background-image: url("/assets/img/top/bg-575.png");
 			height: 575px;
@@ -167,6 +173,20 @@ body {
   		position: relative;
 			z-index: 0;
   		overflow: hidden;
+      .big-menu {
+        margin-top: 80px;
+        .big-menu-list {
+          list-style: none;
+          li {
+            display: block;
+            // background: #ff0;
+            img.big-menu-image {
+              width: 100px;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
 		}
 		@media (min-width: 576px) and (max-width: 768px) {
 			background-image: url("/assets/img/top/bg-768.png");
@@ -243,41 +263,9 @@ body {
 			p.lead {
 				color: rgb(204, 204, 204);
 			}
-			
 		}
 	}
-	.big-banner-before:before {
-		// content: '';
-		// background: inherit;
-		// -webkit-filter: blur(0px);
-		// -moz-filter: blur(0px);
-		// -o-filter: blur(0px);
-		// -ms-filter: blur(0px);
-		// filter: blur(0px);
-		// position: absolute;
-		// top: -5px;
-		// left: -5px;
-		// right: -5px;
-		// bottom: -5px;
-		// z-index: -1;
-	}
 
-	.big-banner-before:before {
-		// content: '';
-		// background: inherit;
-		// -webkit-filter: blur(0px);
-		// -moz-filter: blur(0px);
-		// -o-filter: blur(0px);
-		// -ms-filter: blur(0px);
-		// filter: blur(0px);
-		// position: absolute;
-		// top: -5px;
-		// left: -5px;
-		// right: -5px;
-		// bottom: -5px;
-		// z-index: -1;
-	}
-	
 	/* Login */
 	.login-contents-block {
 		.login {

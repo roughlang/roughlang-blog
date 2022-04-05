@@ -17,9 +17,6 @@ $env = get_env($envs);
 		</button>
 		<div class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle active" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $blog_title; ?></a>
           <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
@@ -42,9 +39,8 @@ $env = get_env($envs);
           </ul>
         </li>
       </ul>
-
       <form role="search" method="get" id="searchform" class="d-flex searchform" action="/ac/">
-        <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" value="" name="s" id="s">
+        <input class="form-control me-2" type="text" placeholder="Search in documents" aria-label="Search" value="" name="s" id="s">
         <button class="btn" type="submit" id="searchsubmit" value="">
           <img src="/assets/img/item/search.svg" width="24" height="24" alt="search">
         </button>

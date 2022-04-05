@@ -6,8 +6,25 @@
 <div id="big-banner" class="big-banner p-3 p-sm-5 mb-4 bg-img">
 	<div id="container" class="container">
 		<h1 class="display-4">{{ env('APP_NAME') }}</h1>
-		<p class="lead">Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheuren Ungeziefer verwandelt. Er lag auf sinem panzerartig harten Rücken und sah, wenn er den Kopf eine wenig hob, seinen gewölbten, braunen, von bogenförmigen Versteifungen geteilten Bauch, auf dessen Höhe sich die Bettdecke, zum gänzlichen Niedergleiten bereit, kaum noch erhalten konnte. Seine vielen, im Vergleich zu seinem sonstigen Umfang kläglich dünnnen Beine flimmerten ihm hilflos vor den Augen.</p>
-	</div>
+		<!-- <p class="lead">Als Gregor Samsa eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheuren Ungeziefer verwandelt. Er lag auf sinem panzerartig harten Rücken und sah, wenn er den Kopf eine wenig hob, seinen gewölbten, braunen, von bogenförmigen Versteifungen geteilten Bauch, auf dessen Höhe sich die Bettdecke, zum gänzlichen Niedergleiten bereit, kaum noch erhalten konnte. Seine vielen, im Vergleich zu seinem sonstigen Umfang kläglich dünnnen Beine flimmerten ihm hilflos vor den Augen.</p> -->
+	
+    <!-- <div class="big-menu">
+      <ul class="big-menu-list">
+        <li>
+          <a href="http://">
+            <img src="/assets/img/top/bl_009.jpg" alt="" class="big-menu-image">
+            <h3>Philosophy</h3>
+          </a>
+        </li>
+        <li>
+          <a href="http://">2</a>
+        </li>
+        <li>
+          <a href="http://">3</a>
+        </li>
+      </ul>
+    </div> -->
+  </div>
 </div>
 @endsection
 
