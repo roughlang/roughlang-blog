@@ -568,6 +568,7 @@ body {
           margin: 26px 0;
         }
         p {
+          overflow-wrap: break-word;
           img {
             margin-top: 20px;
             @media (max-width: 575px) {

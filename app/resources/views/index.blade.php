@@ -66,8 +66,8 @@
             /* posts */
             this.loading = true;
             let blog_api_endpoint;
-            const stg_blog_api_endpoint = 'https://insomnia-stg.roughlang.com/ac/wp-json/wp/v2/posts?categories=11+8+3+1';
-            const prod_blog_api_endpoint = 'https://insomnia.roughlang.com/ac/wp-json/wp/v2/posts?categories=11+8+3+1';
+            const stg_blog_api_endpoint = 'https://insomnia-stg.roughlang.com/ac/ja/wp-json/wp/v2/posts?categories=11+8+3+1+20';
+            const prod_blog_api_endpoint = 'https://insomnia.roughlang.com/ac/ja/wp-json/wp/v2/posts?categories=11+8+3+1+20';
             if (env == 'local' || env == 'develop' || env == 'stg') {
               blog_api_endpoint = stg_blog_api_endpoint;
             } else if (env == 'prod') {
