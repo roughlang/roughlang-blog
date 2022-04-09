@@ -1,5 +1,7 @@
 <?php
 require_once(__DIR__."/common.php");
+// $attach_id = get_the_post_thumbnail($post_id,"thumbnail");
+// var_dump($attach_id);
 ?>
 <head>
 	<meta charset="UTF-8">
@@ -58,6 +60,16 @@ require_once(__DIR__."/common.php");
 	<script type="text/javascript" src="/assets/js/vue/axios.js"></script>
 	<script type="text/javascript" src="/assets/js/jquery/jquery-3.6.0.js"></script>
 	<script type="text/javascript" src="/assets/js/_main/main.js"></script>
+	
+	<!-- twitter card -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@AonumaMoriri" />
+	<meta name="twitter:creator" content="@AonumaMoriri" />
+	<meta property="og:url" content="<?php echo $page_url;?>" />
+	<meta property="og:title" content="<?php echo $page_title; ?> | Blog | Roughlang" />
+	<meta property="og:description" content="<?php echo $page_excerpt; ?>" />
+	<meta property="og:image" content="<?php echo $og_post_image; ?>" />
+	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-3N6SQZE3KH"></script>
 	<script>
