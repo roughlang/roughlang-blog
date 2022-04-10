@@ -372,6 +372,9 @@ body {
 					}
 				}
 			}
+      h3 {
+
+      }
       /* 3 photo index link */
       .document-menu {
         margin: 0;
@@ -522,12 +525,6 @@ body {
 					color: #444;
 					margin-top: 50px;
           			margin-bottom: 27px;
-<<<<<<< HEAD
-				}
-				.single-title {
-					color:red;
-=======
->>>>>>> FETCH_HEAD
 				}
 				h4 {
 					font-size: 20px;
@@ -624,6 +621,20 @@ body {
           em {
             background:linear-gradient(transparent 75%, #ffc1e0 75%);
             font-style: normal;
+          }
+          .google_map_iframe {
+            // width: 100%;
+            @media (max-width:992px) {width: 100%;}
+            @media (min-width: 993px) and (max-width: 1200px) {
+              width: 50%;
+              height: 300px;
+              float: right;
+            }
+            @media (min-width: 1201px) {
+              width: 50%;
+              height: 300px;
+              float: right;
+            }
           }
         }
         
@@ -839,8 +850,10 @@ body {
 							line-height: 23px;
 						}
 					}
-
 				}
+        li.widget_tag_cloud {
+          margin-bottom: 30px;
+        }
 			}
 			nav.pagination {
 				

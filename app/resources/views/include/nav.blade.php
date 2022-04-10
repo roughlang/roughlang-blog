@@ -24,7 +24,7 @@
 							<li><a class="dropdown-item" href="/ac/gallery">Gallery</a></li>
 						</ul>
 					</li>
-          <!-- <li class="nav-item"><a  class="nav-link active" href="#">foo</a></li> -->
+          <li class="nav-item"><a  class="nav-link active" href="/ac/about">About</a></li>
           @guest
             @if (Route::has('login'))
               @auth
