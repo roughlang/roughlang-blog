@@ -27,6 +27,7 @@ $env = get_env($envs);
             <li><a class="dropdown-item" href="<?php echo WP_HOME; ?>/gallery">Gallery</a></li>
           </ul>
         </li>
+        <li class="nav-item"><a  class="nav-link active" href="/ac/about">About</a></li>
         <li class="nav-item"><a class="nav-link active" href="/login">Log in</a></li>
         <li class="nav-item"><a class="nav-link active" href="/register">Register</a></li>
         <li class="nav-item dropdown">
