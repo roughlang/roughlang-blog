@@ -8,6 +8,7 @@ require_once(__DIR__."/common.php");
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   	<link rel="canonical" href="<?php echo $page_url;?>">
+	<meta name="robots" content="all">
 	<title><?php echo $page_title; ?> | Blog | Roughlang</title>
 	<meta name="description" content="<?php echo $page_excerpt; ?>">
 	<meta name="msapplication-square70x70logo" content="/assets/img/icon/favicon/site-tile-70x70.png">
