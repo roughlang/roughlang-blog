@@ -415,12 +415,12 @@ body {
 				@media (min-width: 769px) and (max-width: 1200px) {
 					a:link, a:visited, a:hover, a:active {
 						display: block;
-            width: 33.3333%;
+            // width: 100px;
             margin: 0;
             padding: 0;
             .menu-index {
               position: relative;
-              width: 100%;
+              // width: 100px;
               span.text {
                 position: absolute;
                 top: 10px;
@@ -433,33 +433,43 @@ body {
                 border-radius: 3px;
               }
               img {
-                width: 100%;
+                // width: 100%;
+                width: 280px;
+                // height: 300px;
+                border-radius: 50%;
               }
             }
-					} 
+			} 
         }
 				@media (min-width: 1201px) {
           a:link, a:visited, a:hover, a:active {
 						display: block;
+            // width: 33.3333%;
             width: 33.3333%;
+            // height: 300px;
+            border-radius: 50%;
             margin: 0;
             padding: 0;
             .menu-index {
               position: relative;
               width: 100%;
+              text-align: center;
               span.text {
                 position: absolute;
-                top: 10px;
-                left: 10px;
+                top: 48px;
+                left: 61px;
                 color: #fff;
-                font-size: 20px;
+                font-size: 13px;
                 letter-spacing: 3px;
                 background: #000;
                 padding: 3px 12px;
                 border-radius: 3px;
               }
               img {
-                width: 100%;
+				        margin: 0 auto;
+                width: 150px;
+				        height: 150px;
+				        border-radius: 50%;
               }
             }
 					} 
@@ -524,17 +534,20 @@ body {
 					font-size: 24px;
 					color: #444;
 					margin-top: 50px;
-          			margin-bottom: 27px;
+          margin-bottom: 27px;
 				}
 				h4 {
+          margin-top: 30px;
 					font-size: 20px;
 					color: #444;
 				}
 				h5 {
+          margin-top: 30px;
 					font-size: 19px;
 					color: #444;
 				}
 				h6 {
+          margin-top: 30px;
 					font-size: 18px;
 					color: #444;
 				}
